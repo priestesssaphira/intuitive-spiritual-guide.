@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#100b17">
+  <meta name="description" content="Intuitive spiritual consultations for reflection, self-discovery, relationships, tarot, angel messages, and astrology.">
+  <title>Intuitive Spiritual Guide | Readings & Reflection</title>
+  <style>
+    :root {
+      --bg: #100b17; --panel: #1b1325; --panel2: #21172d; --gold: #d8b878;
+      --gold-light: #f0d9a2; --cream: #f7f0e5; --muted: #c2b6c9; --line: rgba(216,184,120,.24);
+      --plum: #7b4e8d; --green: #3b9b70;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--bg); color: var(--cream); font-family: Georgia, "Times New Roman", serif; line-height: 1.65; }
+    a { color: inherit; }
+    .wrap { width: min(1120px, calc(100% - 40px)); margin: auto; }
+    .nav { display:flex; justify-content:space-between; align-items:center; gap:20px; padding:22px 0; border-bottom:1px solid var(--line); }
+    .brand { letter-spacing:.08em; text-transform:uppercase; font-size:.83rem; color:var(--gold-light); }
+    .navlinks { display:flex; gap:22px; flex-wrap:wrap; font-family:Arial,sans-serif; font-size:.86rem; }
+    .navlinks a { text-decoration:none; color:var(--muted); }
+    .navlinks a:hover { color:var(--gold-light); }
+    .hero { position:relative; overflow:hidden; padding:88px 0 80px; background: radial-gradient(ellipse at 80% 25%, rgba(123,78,141,.28), transparent 38%), radial-gradient(ellipse at 15% 70%, rgba(216,184,120,.09), transparent 35%); }
+    .eyebrow { color:var(--gold); text-transform:uppercase; letter-spacing:.2em; font: .75rem Arial,sans-serif; }
+    h1 { font-size:clamp(2.8rem, 7vw, 5.7rem); line-height:1.02; font-weight:normal; max-width:780px; margin:20px 0; }
+    h1 em { color:var(--gold-light); font-weight:normal; }
+    .hero p { max-width:630px; color:var(--muted); font-size:1.1rem; }
+    .actions { display:flex; gap:12px; flex-wrap:wrap; margin-top:30px; }
+    .btn { display:inline-flex; align-items:center; justify-content:center; border:1px solid var(--gold); padding:12px 20px; border-radius:3px; text-decoration:none; cursor:pointer; font:600 .9rem Arial,sans-serif; transition:.2s; }
+    .btn.primary { background:var(--gold); color:#1a1020; }
+    .btn.primary:hover { background:var(--gold-light); }
+    .btn.secondary { color:var(--cream); }
+    .btn.secondary:hover { background:rgba(216,184,120,.1); }
+    .stars { position:absolute; right:7%; top:14%; color:var(--gold); font-size:clamp(6rem, 20vw, 15rem); opacity:.22; line-height:1; user-select:none; }
+    section { padding:72px 0; }
+    .section-head { max-width:700px; margin-bottom:32px; }
+    h2 { font-size:clamp(2rem, 4vw, 3.2rem); font-weight:normal; line-height:1.12; margin:10px 0 16px; }
+    .section-head p, .muted { color:var(--muted); }
+    .grid { display:grid; grid-template-columns:repeat(3, 1fr); gap:16px; }
+    .card { background:linear-gradient(145deg, var(--panel2), var(--panel)); border:1px solid var(--line); padding:24px; border-radius:7px; display:flex; flex-direction:column; align-items:flex-start; }
+    .symbol { font-size:1.65rem; color:var(--gold); margin-bottom:12px; }
+    h3 { font-size:1.28rem; font-weight:normal; margin:0 0 9px; }
+    .card p { color:var(--muted); font-size:.95rem; margin:0 0 18px; }
+    .card button { margin-top:auto; background:none; border:0; color:var(--gold-light); cursor:pointer; padding:0; font:600 .88rem Arial,sans-serif; text-align:left; }
+    .about { background:linear-gradient(100deg, rgba(123,78,141,.12), transparent 60%); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+    .about-grid { display:grid; grid-template-columns:1fr 1fr; gap:50px; align-items:center; }
+    .quote { border-left:2px solid var(--gold); padding:18px 0 18px 24px; color:var(--gold-light); font-size:1.45rem; }
+    .steps { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+    .step { padding:20px; border-top:1px solid var(--gold); background:rgba(255,255,255,.025); }
+    .num { color:var(--gold); font: .8rem Arial,sans-serif; letter-spacing:.15em; }
+    .booking { background:radial-gradient(ellipse at 80% 0%, rgba(123,78,141,.2), transparent 50%), var(--panel); border-top:1px solid var(--line); }
+    .booking-grid { display:grid; grid-template-columns:.85fr 1.15fr; gap:40px; align-items:start; }
+    form { display:grid; gap:15px; }
+    label { display:block; font: .83rem Arial,sans-serif; color:var(--muted); margin-bottom:6px; }
+    input, select, textarea { width:100%; padding:13px 14px; background:#110c18; color:var(--cream); border:1px solid rgba(216,184,120,.3); border-radius:3px; font:1rem Arial,sans-serif; }
+    textarea { min-height:110px; resize:vertical; }
+    input:focus, select:focus, textarea:focus { outline:1px solid var(--gold); }
+    .notice { color:var(--muted); font: .82rem/1.6 Arial,sans-serif; }
+    .disclaimer { background:#15101c; border:1px solid var(--line); padding:18px 20px; color:var(--muted); font: .84rem/1.7 Arial,sans-serif; border-radius:5px; }
+    footer { padding:28px 0; border-top:1px solid var(--line); color:var(--muted); font: .82rem Arial,sans-serif; }
+    .footer-inner { display:flex; justify-content:space-between; gap:18px; flex-wrap:wrap; }
+    .whatsapp { background:var(--green); border-color:var(--green); color:white; }
+    .whatsapp:hover { filter:brightness(1.08); }
+    @media (max-width:780px) {
+      .nav { align-items:flex-start; flex-direction:column; }
+      .hero { padding:66px 0; }
+      .grid { grid-template-columns:1fr 1fr; }
+      .about-grid, .booking-grid { grid-template-columns:1fr; gap:25px; }
+      .steps { grid-template-columns:1fr; }
+      .stars { right:2%; top:18%; }
+    }
+    @media (max-width:520px) {
+      .wrap { width:min(100% - 28px, 1120px); }
+      .grid { grid-template-columns:1fr; }
+      .navlinks { gap:13px; }
+      section { padding:55px 0; }
+      .hero p { font-size:1rem; }
+    }
+  </style>
+</head>
+<body>
+  <header class="wrap nav">
+    <a class="brand" href="#" aria-label="Intuitive Spiritual Guide home">✧ Intuitive Spiritual Guide</a>
+    <nav class="navlinks" aria-label="Main navigation">
+      <a href="#readings">Readings</a><a href="#approach">My approach</a><a href="#process">How it works</a><a href="#booking">Contact & booking</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="stars" aria-hidden="true">☾</div>
+      <div class="wrap">
+        <div class="eyebrow">A space for reflection and self-discovery</div>
+        <h1>Find space for<br><em>clarity, meaning</em><br>and your next step.</h1>
+        <p>Explore life's questions through intuitive readings and spiritual reflection. Bring your curiosity, your questions, and your own inner wisdom.</p>
+        <div class="actions">
+          <a class="btn primary" href="#booking">Enquire about a reading&nbsp; ↗</a>
+          <a class="btn secondary" href="#readings">Explore readings</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="readings">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">Choose your focus</div>
+          <h2>Readings for the questions on your heart.</h2>
+          <p>Each session is an opportunity to pause, explore a question, and consider your situation from a fresh perspective. Select a service to begin an enquiry on WhatsApp.</p>
+        </div>
+        <div class="grid">
+          <article class="card">
+            <div class="symbol">✧</div><h3>Intuitive Readings</h3>
+            <p>A reflective session centred on a question, transition, or area of life you would like to explore.</p>
+            <button type="button" data-service="Intuitive readings">Enquire about this reading →</button>
+          </article>
+          <article class="card">
+            <div class="symbol">♡</div><h3>Love & Relationships</h3>
+            <p>Explore emotional patterns, relationship needs, communication, boundaries, and choices.</p>
+            <button type="button" data-service="Love & relationship readings">Enquire about this reading →</button>
+          </article>
+          <article class="card">
+            <div class="symbol">☾</div><h3>Spiritual Growth</h3>
+            <p>Make space for self-discovery, personal values, intentional living, and your next chapter.</p>
+            <button type="button" data-service="Spiritual growth & self-discovery">Enquire about this reading →</button>
+          </article>
+          <article class="card">
+            <div class="symbol">✺</div><h3>Tarot Readings</h3>
+            <p>Use tarot symbolism as a tool for reflection, exploring themes and possibilities rather than fixed outcomes.</p>
+            <button type="button" data-service="Tarot readings">Enquire about this reading →</button>
+          </article>
+          <article class="card">
+            <div class="symbol">☼</div><h3>Angel Messages</h3>
+            <p>A gentle, faith-sensitive reflective session focused on encouragement, intention, and meaning.</p>
+            <button type="button" data-service="Angel messages">Enquire about this reading →</button>
+          </article>
+          <article class="card">
+            <div class="symbol">✧</div><h3>Birth Chart & Astrology</h3>
+            <p>Explore astrological themes as a framework for reflection on personality, cycles, and personal growth.</p>
+            <button type="button" data-service="Birth chart / astrology readings">Enquire about this reading →</button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="about" id="approach">
+      <div class="wrap about-grid">
+        <div>
+          <div class="eyebrow">My approach</div>
+          <h2>Spiritual curiosity, grounded in your own agency.</h2>
+          <p class="muted">This is a space to explore what matters to you with openness and care. Readings are offered for reflection and personal insight—not as guarantees about the future or another person's private thoughts.</p>
+          <p class="muted">You are always free to ask questions, keep what feels useful, and make your own decisions.</p>
+        </div>
+        <div class="quote">“Let a reading be a mirror for reflection—not a substitute for your own voice.”</div>
+      </div>
+    </section>
+
+    <section id="process">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">Simple and personal</div>
+          <h2>How booking works</h2>
+          <p>No automatic payment or calendar is required to get started. Your appointment is only confirmed after you and the guide agree on the details.</p>
+        </div>
+        <div class="steps">
+          <div class="step"><div class="num">STEP 01</div><h3>Choose a reading</h3><p class="muted">Select the service that best matches the question or theme you want to explore.</p></div>
+          <div class="step"><div class="num">STEP 02</div><h3>Send an enquiry</h3><p class="muted">WhatsApp opens with your selected reading and preferred contact details, ready for you to review and send.</p></div>
+          <div class="step"><div class="num">STEP 03</div><h3>Agree on the details</h3><p class="muted">Discuss availability, session format, duration, and payment privately before confirming.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="booking" id="booking">
+      <div class="wrap booking-grid">
+        <div>
+          <div class="eyebrow">Begin a conversation</div>
+          <h2>What would you like to explore?</h2>
+          <p class="muted">Share a little about the reading you are interested in. Your message will be prepared for WhatsApp; you can edit it before sending.</p>
+          <div class="disclaimer">Please avoid sending highly sensitive personal information in your first enquiry. Session availability and payment arrangements are discussed directly before a booking is confirmed.</div>
+        </div>
+        <form id="bookingForm">
+          <div><label for="service">Reading type</label>
+            <select id="service" name="service" required>
+              <option value="Intuitive readings">Intuitive readings</option>
+              <option value="Love & relationship readings">Love & relationship readings</option>
+              <option value="Spiritual growth & self-discovery">Spiritual growth & self-discovery</option>
+              <option value="Tarot readings">Tarot readings</option>
+              <option value="Angel messages">Angel messages</option>
+              <option value="Birth chart / astrology readings">Birth chart / astrology readings</option>
+            </select>
+          </div>
+          <div><label for="name">Your name or preferred name</label><input id="name" name="name" placeholder="How should I address you?" required></div>
+          <div><label for="format">Preferred session format</label>
+            <select id="format" name="format"><option>WhatsApp chat</option><option>Voice call</option><option>Video call</option><option>Open to discussing options</option></select>
+          </div>
+          <div><label for="availability">Preferred day or time (optional)</label><input id="availability" name="availability" placeholder="e.g. weekday evening, your time zone"></div>
+          <div><label for="question">What would you like to explore? (optional)</label><textarea id="question" name="question" placeholder="A short summary is enough. Share only what you're comfortable sharing."></textarea></div>
+          <button class="btn whatsapp" type="submit">Prepare WhatsApp enquiry ↗</button>
+          <div class="notice" id="status" role="status">WhatsApp will open in a new tab or app. Review the message and press Send yourself.</div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <span>© <span id="year"></span> Intuitive Spiritual Guide</span>
+      <span>Reflection and spiritual guidance; not medical, legal, or financial advice.</span>
+    </div>
+  </footer>
+
+  <script>
+    /*
+      SETUP REQUIRED:
+      Replace the placeholder below with your WhatsApp number in international format,
+      digits only (no +, spaces, brackets, or dashes). Example format for Nigeria: 2348012345678.
+    */
+    const WHATSAPP_NUMBER = "234YOURNUMBER";
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    document.querySelectorAll("[data-service]").forEach((button) => {
+      button.addEventListener("click", () => {
+        document.getElementById("service").value = button.dataset.service;
+        document.getElementById("booking").scrollIntoView({ behavior: "smooth" });
+      });
+    });
+
+    document.getElementById("bookingForm").addEventListener("submit", (event) => {
+      event.preventDefault();
+      const status = document.getElementById("status");
+      if (!/^[0-9]{8,15}$/.test(WHATSAPP_NUMBER) || WHATSAPP_NUMBER.includes("YOURNUMBER")) {
+        status.textContent = "Setup needed: open index.html, replace 234YOURNUMBER in the script with your WhatsApp number in international format, save, and upload the updated file.";
+        status.style.color = "#f0d9a2";
+        return;
+      }
+      const form = new FormData(event.currentTarget);
+      const message = [
+        "Hello! I'd like to enquire about a spiritual reading.",
+        "",
+        "Reading: " + form.get("service"),
+        "Name: " + form.get("name"),
+        "Preferred format: " + form.get("format"),
+        "Preferred time: " + (form.get("availability") || "Flexible / to discuss"),
+        "What I'd like to explore: " + (form.get("question") || "I'd prefer to discuss this privately."),
+        "",
+        "Please share the available options, duration, and payment details. Thank you."
+      ].join("\n");
+      window.open("https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(message), "_blank", "noopener,noreferrer");
+    });
+  </script>
+</body>
+</html>
